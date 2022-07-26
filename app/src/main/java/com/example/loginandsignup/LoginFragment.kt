@@ -1,29 +1,29 @@
 package com.example.loginandsignup
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
+import androidx.fragment.app.Fragment
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.Navigation
-import kotlinx.android.synthetic.main.fragment_login.view.*
+import com.example.loginandsignup.databinding.FragmentLoginBinding
 
 
-class LoginFragment : Fragment() {
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        val view = inflater.inflate(R.layout.fragment_login, container, false)
+class LoginFragment : Fragment(R.layout.fragment_login) {
+    
+    private lateinit var binding: FragmentLoginBinding
 
-        view.textViewSignUp.setOnClickListener{
-            Navigation.findNavController(view).navigate(R.id.action_loginFragment_to_registerFragment)
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        binding = FragmentLoginBinding.bind(view)
+
+        binding.textViewSignUp.setOnClickListener{
+            Navigation.findNavController(view).navigate(R.id.action_LoginFragment_to_RegisterFragment)
         }
 
-        view.textViewForgotPassword.setOnClickListener{
-            Navigation.findNavController(view).navigate(R.id.action_loginFragment_to_forgetPasswordFragment)
+        binding.textViewForgotPassword.setOnClickListener {
+            Navigation.findNavController(view).navigate(R.id.action_LoginFragment_to_ForgetPasswordFragment)
         }
-        return view
     }
+
 }

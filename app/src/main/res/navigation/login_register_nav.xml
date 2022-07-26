@@ -1,51 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
-<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+<navigation
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/login_register_nav"
-    app:startDestination="@id/loginFragment">
+    app:startDestination="@+id/LoginFragment">
     <fragment
-        android:id="@+id/loginFragment"
+        android:id="@+id/LoginFragment"
         android:name="com.example.loginandsignup.LoginFragment"
         android:label="fragment_login"
         tools:layout="@layout/fragment_login" >
         <action
-            android:id="@+id/action_loginFragment_to_registerFragment"
-            app:destination="@id/registerFragment" />
+            android:id="@+id/action_LoginFragment_to_RegisterFragment"
+            app:destination="@id/RegisterFragment" />
         <action
-            android:id="@+id/action_loginFragment_to_forgetPasswordFragment"
-            app:destination="@id/forgetPasswordFragment" />
+            android:id="@+id/action_LoginFragment_to_ForgetPasswordFragment"
+            app:destination="@id/ForgetPasswordFragment" />
     </fragment>
     <fragment
-        android:id="@+id/registerFragment"
+        android:id="@+id/RegisterFragment"
         android:name="com.example.loginandsignup.RegisterFragment"
         android:label="fragment_register"
         tools:layout="@layout/fragment_register" />
     <fragment
-        android:id="@+id/forgetPasswordFragment"
+        android:id="@+id/ForgetPasswordFragment"
         android:name="com.example.loginandsignup.ForgetPasswordFragment"
         android:label="fragment_forget_password"
         tools:layout="@layout/fragment_forget_password" >
         <action
-            android:id="@+id/action_forgetPasswordFragment_to_oneTimePasswordFragment"
-            app:destination="@id/oneTimePasswordFragment" />
+            android:id="@+id/action_ForgetPasswordFragment_to_OneTimePasswordFragment"
+            app:destination="@id/OneTimePasswordFragment" />
     </fragment>
     <fragment
-        android:id="@+id/oneTimePasswordFragment"
+        android:id="@+id/OneTimePasswordFragment"
         android:name="com.example.loginandsignup.OneTimePasswordFragment"
         android:label="fragment_one_time_password"
         tools:layout="@layout/fragment_one_time_password" >
         <action
-            android:id="@+id/action_oneTimePasswordFragment_to_passwordResetFragment"
-            app:destination="@id/passwordResetFragment" />
+            android:id="@+id/action_OneTimePasswordFragment_to_PasswordResetFragment"
+            app:destination="@id/PasswordResetFragment" />
     </fragment>
     <fragment
-        android:id="@+id/passwordResetFragment"
+        android:id="@+id/PasswordResetFragment"
         android:name="com.example.loginandsignup.PasswordResetFragment"
         android:label="fragment_password_reset"
         tools:layout="@layout/fragment_password_reset" >
         <action
-            android:id="@+id/action_passwordResetFragment_to_loginFragment"
-            app:destination="@id/loginFragment" />
+            android:id="@+id/action_PasswordResetFragment_to_LoginFragment"
+            app:destination="@id/LoginFragment" />
     </fragment>
 </navigation>
